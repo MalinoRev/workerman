@@ -1540,7 +1540,7 @@ class Worker
             Timer::add(1000000, function (){});
 
             // Display UI.
-            static::safeEcho(str_pad($worker->name, 48) . str_pad($worker->getSocketName(), 36) . str_pad('1', 10) . "  [ok]\n");
+            // static::safeEcho(str_pad($worker->name, 48) . str_pad($worker->getSocketName(), 36) . str_pad('1', 10) . "  [ok]\n");
             $worker->listen();
             $worker->run();
             static::$globalEvent->run();
