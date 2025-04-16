@@ -761,7 +761,7 @@ class Worker
         static::$globalStatistics['start_timestamp'] = time();
 
         // Process title.
-        static::setProcessTitle('WorkerMan: master process  start_file=' . static::$startFile);
+        static::setProcessTitle('Zaiko Micro Platform: master process  start_file=' . static::$startFile);
 
         // Init data for worker id.
         static::initId();
@@ -1676,7 +1676,7 @@ class Worker
 
             restore_error_handler();
 
-            static::setProcessTitle('WorkerMan: worker process  ' . $worker->name . ' ' . $worker->getSocketName());
+            static::setProcessTitle('Zaiko Micro Platform:  ' . $worker->name . ' ' . $worker->getSocketName());
             $worker->setUserAndGroup();
             $worker->id = $id;
             $worker->run();
