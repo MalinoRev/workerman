@@ -941,65 +941,9 @@ class Worker
      * @return void
      */
     protected static function displayUI(): void
-    {
-        // $tmpArgv = static::getArgv();
-        // if (in_array('-q', $tmpArgv)) {
-        //     return;
-        // }
-
-
-        // $lineVersion = static::getVersionLine();
-        // // For windows
-        // if (DIRECTORY_SEPARATOR !== '/') {
-        //     static::safeEcho("---------------------------------------------- WORKERMAN -----------------------------------------------\r\n");
-        //     static::safeEcho($lineVersion);
-        //     static::safeEcho("----------------------------------------------- WORKERS ------------------------------------------------\r\n");
-        //     static::safeEcho("worker                                          listen                              processes   status\r\n");
-        //     return;
-        // }
-
-        // // For unix
-        // !defined('LINE_VERSION_LENGTH') && define('LINE_VERSION_LENGTH', strlen($lineVersion));
-        // $totalLength = static::getSingleLineTotalLength();
-        // $lineOne = '<n>' . str_pad('<w> WORKERMAN </w>', $totalLength + strlen('<w></w>'), '-', STR_PAD_BOTH) . '</n>' . PHP_EOL;
-        // $lineTwo = str_pad('<w> WORKERS </w>', $totalLength + strlen('<w></w>'), '-', STR_PAD_BOTH) . PHP_EOL;
-        // static::safeEcho($lineOne . $lineVersion . $lineTwo);
-
-        // //Show title
-        // $title = '';
-        // foreach (static::getUiColumns() as $columnName => $prop) {
-        //     $key = 'max' . ucfirst(strtolower($columnName)) . 'NameLength';
-        //     //just keep compatible with listen name
-        //     $columnName === 'socket' && $columnName = 'listen';
-        //     $title .= "<w>$columnName</w>" . str_pad('', static::getUiColumnLength($key) + static::UI_SAFE_LENGTH - strlen($columnName));
-        // }
-        // $title && static::safeEcho($title . PHP_EOL);
-
-        // //Show content
-        // foreach (static::$workers as $worker) {
-        //     $content = '';
-        //     foreach (static::getUiColumns() as $columnName => $prop) {
-        //         $propValue = (string)($worker->$prop ?? $worker->context->$prop);
-        //         $key = 'max' . ucfirst(strtolower($columnName)) . 'NameLength';
-        //         preg_match_all("/(<n>|<\/n>|<w>|<\/w>|<g>|<\/g>)/i", $propValue, $matches);
-        //         $placeHolderLength = !empty($matches[0]) ? strlen(implode('', $matches[0])) : 0;
-        //         $content .= str_pad($propValue, static::getUiColumnLength($key) + static::UI_SAFE_LENGTH + $placeHolderLength);
-        //     }
-        //     $content && static::safeEcho($content . PHP_EOL);
-        // }
-
-        // //Show last line
-        // $lineLast = str_pad('', static::getSingleLineTotalLength(), '-') . PHP_EOL;
-        // !empty($content) && static::safeEcho($lineLast);
-
-        // if (static::$daemonize) {
-        //     static::safeEcho('Input "php ' . basename(static::$startFile) . ' stop" to stop. Start success.' . "\n\n");
-        // } else if (!empty(static::$command)) {
-        //     static::safeEcho("Start success.\n"); // Workerman used as library
-        // } else {
-        //     static::safeEcho("Press Ctrl+C to stop. Start success.\n");
-        // }
-    }
+	{
+		// Silence is golden!
+	}
 
     /**
      * @return string
