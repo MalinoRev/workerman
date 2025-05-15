@@ -48,6 +48,12 @@ use const PHP_SAPI;
 use const PHP_VERSION;
 use const STDOUT;
 
+if (stripos(PHP_OS_FAMILY, 'Windows') !== false) {
+    define('WINDOWS_OS', true);
+} else {
+    define('WINDOWS_OS', false);
+}
+
 /**
  * Worker class
  * A container for listening ports
@@ -747,8 +753,10 @@ class Worker
             if (!is_dir(dirname(static::$logFile))) {
                 mkdir(dirname(static::$logFile), 0777, true);
             }
-            touch(static::$logFile);
-            chmod(static::$logFile, 0644);
+            if (!WINDOWS_OS) {
+                touch(self::$pidFile);
+                chmod(self::$pidFile, 0622);
+            }
         }
 
         // State.
